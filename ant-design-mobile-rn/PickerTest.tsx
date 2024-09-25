@@ -146,6 +146,20 @@ export default () => {
           expect(state).to.be.eq(true);
         }}>
       </TestCase>
+      <TestCase itShould="render a Picker okButtonProps={{ activeOpacity: 1, underlayColor: 'red' }}" tags={['C_API']}>
+        <List>
+          <Picker data={datas} okButtonProps={{ activeOpacity: 1, underlayColor: 'red' }}>
+            <List.Item arrow="horizontal">{'省市选择'}</List.Item>
+          </Picker>
+        </List>
+      </TestCase>
+      <TestCase itShould="render a Picker okButtonProps={{ activeOpacity: 1, underlayColor: 'yellow' }}" tags={['C_API']}>
+        <List>
+          <Picker data={datas} dismissButtonProps={{ activeOpacity: 1, underlayColor: 'yellow' }}>
+            <List.Item arrow="horizontal">{'省市选择'}</List.Item>
+          </Picker>
+        </List>
+      </TestCase>
       <TestCase itShould="render a Picker visible control" tags={['C_API']}>
         <BasicDemo />
       </TestCase>
@@ -218,10 +232,17 @@ export default () => {
           </Picker>
         </List>
       </TestCase>
-      <TestCase itShould="render a Picker triggerType='onLongPress'" tags={['C_API']}>
+      <TestCase itShould="render a Picker triggerType='onPress' onPress之外的值无法正常使用,这里设置成了onPress，能正常使用" tags={['C_API']}>
+        <List>
+          <Picker data={datas} triggerType='onPress' value={value10} onChange={(value: any) => { setvalue10(value) }}>
+            <List.Item arrow="horizontal">点击有效</List.Item>
+          </Picker>
+        </List>
+      </TestCase>
+      <TestCase itShould="render a Picker triggerType='onLongPress' onPress之外的值无法正常使用,这里设置成了onLongPress，无法正常使用" tags={['C_API']}>
         <List>
           <Picker data={datas} triggerType='onLongPress' value={value10} onChange={(value: any) => { setvalue10(value) }}>
-            <List.Item arrow="horizontal">长按选址</List.Item>
+            <List.Item arrow="horizontal">点击无效</List.Item>
           </Picker>
         </List>
       </TestCase>
@@ -231,6 +252,13 @@ export default () => {
       <TestCase itShould="render a Picker style={{padding: 20, backgroundColor:'pink'}}" tags={['C_API']}>
         <List>
           <Picker data={datas} style={{ padding: 10, backgroundColor: 'pink' }}>
+            <List.Item arrow="horizontal">选址</List.Item>
+          </Picker>
+        </List>
+      </TestCase>
+      <TestCase itShould="render a Picker locale={{okText:'确认'}}" tags={['C_API']}>
+        <List>
+          <Picker data={datas} locale={{ okText: '确认' }}>
             <List.Item arrow="horizontal">选址</List.Item>
           </Picker>
         </List>

@@ -109,9 +109,9 @@ export default () => {
               Option 1
             </CheckboxItem>
             <CheckboxItem>Option 2</CheckboxItem>
-            <CheckboxItem disabled>Option 3</CheckboxItem>
-            <CheckboxItem disabled checked right>
-              More...
+            <CheckboxItem>Option 3</CheckboxItem>
+            <CheckboxItem checked right>
+              自动已被选择，无法取消的选项
             </CheckboxItem>
           </List>
         </View>
