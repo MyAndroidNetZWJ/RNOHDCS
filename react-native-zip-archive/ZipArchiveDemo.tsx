@@ -3,7 +3,7 @@ import { View, Button, StyleSheet, TextInput, Alert, Text, ActivityIndicator } f
 import { pathParameters, zip, unzip, zipWithPassword, unzipWithPassword, subscribe, creteFile, isPasswordProtected, unzipAssets, getUncompressedSize } from 'react-native-zip-archive';
 import { ProgressBar } from 'react-native-paper';
 
-export function ZipArchiveDemo() {
+export const ZipArchiveDemo = () => {
     const [fileName, setFileName] = useState('');
     const [fileContent, setFileContent] = useState('');
     const [createdFilePath, setCreatedFilePath] = useState('');
@@ -228,7 +228,7 @@ export function ZipArchiveDemo() {
                 console.log(`getUncompressedSize err:${err}`)
             })
     }
-
+    
     return (
         <View style={styles.content}>
             <View style={styles.buttonSix}>
@@ -332,7 +332,8 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 56
+        marginTop: 56,
+        backgroundColor: 'white' 
     },
     buttonSix: {
         width: '65%',

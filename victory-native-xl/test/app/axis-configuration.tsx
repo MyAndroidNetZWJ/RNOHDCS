@@ -7,7 +7,6 @@ import {
   Line,
   Scatter,
 } from "victory-native";
-import { useDarkMode } from "react-native-dark";
 import {
   optionsInitialState,
   optionsReducer,
@@ -38,8 +37,8 @@ const DATA = (ticksX: number[], ticksY: number[]) => {
   }));
 };
 
-export default function AxisConfiguration() {
-  const isDark = useDarkMode();
+export default function CartesianChartPage() {
+  const isDark = true;
   const [
     {
       fontSize,
